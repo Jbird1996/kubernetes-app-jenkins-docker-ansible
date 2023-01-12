@@ -13,9 +13,9 @@ WORKDIR /var/www/html/
 
 RUN unzip cycle.zip
 
-RUN cp -rvf cycle/* .
+RUN cp -rvf html/* .
 
-RUN rm -rf cycle cycle.zip
+RUN rm -rf html cycle.zip
 
 CMD [ "/usr/sbin/httpd", "-D", "FOREGROUND" ]
 
