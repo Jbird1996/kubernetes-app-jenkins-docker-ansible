@@ -14,7 +14,7 @@ spec:
       spec:
         containers:
           - name: jbird
-            image: jbird1996/docker-pipeline
+            image: jbird1996/docker-pipeline:latest
             imagePullPolicy: Always
             ports:
             - containerPort: 80
