@@ -3,7 +3,7 @@ FROM centos:latest
 RUN yum install -y httpd \
   zip\
   unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip .
 
 WORKDIR /var/www/html/
 
