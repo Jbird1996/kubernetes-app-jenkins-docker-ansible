@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+    name: Jbird
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Jbird
+  template:
+      metadata:
+        labels:
+          app: Jbird
+      spec:
+        containers:
+          - name: Jbird
+            image: jbird1996/docker-pipeline
+            imagePullPolicy: Always
+            ports:
+            - containerPort: 80
