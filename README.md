@@ -48,7 +48,7 @@ Also allowed access to port 8080 on the EC2 security group, so I can access jenk
 
 I also installed Git on this server.
 
-The second server I installed ansible and docker. https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-22-04 
+The second server I installed ansible, docker & Python. https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-22-04 
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
 
@@ -57,6 +57,20 @@ The third server I had to install Kops & Kubectl. https://kops.sigs.k8s.io/getti
 I followed this to install kubectl. https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 #### To improve the project efficiency I would put all the installation instructions into a bash script. Only do something by hand twice if you need to do it a third time then automate it.
+
+### The project
+
+After I had setup the servers and I started to write the dockerfile.
+
+![image](https://user-images.githubusercontent.com/117186369/213201211-871a0e10-0de7-4ac3-b795-e413eec0013b.png)
+
+This file is used to build a docker image. The FROM instruction. This allows you to build your image up on another base image. This is an operating system layer.
+
+The run a command in the image. In this case, it runs several commands to run the latest centOS FROM command. Then it runs a Yum install. All those commands will be executed in the working directory.
+
+The WORKDIR in this case is  /var/www/html. This tells Docker that all the subsequent commands will be executed from inside that folder.
+
+The CMD command shows that when a container is started based on the image. That's what we want to execute.
 
 
 
