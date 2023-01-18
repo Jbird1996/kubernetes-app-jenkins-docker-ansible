@@ -53,7 +53,7 @@ The third server I had to install Kops & Kubectl. https://kops.sigs.k8s.io/getti
 
 I followed this to install kubectl. https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
-#### To improve this project efficiency I would but all the installation instructions into a bash script. Only do something by hand twice if you need to do it a third time then automate it.
+#### To improve the project efficiency I would put all the installation instructions into a bash script. Only do something by hand twice if you need to do it a third time then automate it.
 
 
 
