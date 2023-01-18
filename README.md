@@ -74,3 +74,46 @@ The CMD command shows that when a container is started based on the image. That'
 
 The EXPOSE command is an instruction to let Docker know that when this container is started, we want to expose a certain port to our local system.
 
+#### Now we build a Jenkins pipeline for this docker file.
+
+I created a github repo for this and pushed the docker file. I then connect a git webhook between jenkins and github so that whenever this github repo is updated then the pipeline build is run.
+
+The project pulls source code from a github repository. 
+
+![image](https://user-images.githubusercontent.com/117186369/213204470-73afb316-9c12-44db-9b8e-fa4101f535d2.png)
+
+Add another stage to jenkins pipeline to link to ansible server. Copies dockerfile to ansible server to allow the ansible server to build the docker image.
+
+![image](https://user-images.githubusercontent.com/117186369/213204553-806d88f7-2b1b-4d9c-942e-7dc9f26ebf47.png)
+
+Add pipeline stage to build docker image based off dockerfile sent to ansible server.
+
+![image](https://user-images.githubusercontent.com/117186369/213204691-db3e016e-639c-40d3-b2ac-e68c2cf370c8.png)
+
+Add another build stage to tag the docker images.
+
+![image](https://user-images.githubusercontent.com/117186369/213204877-c31caad2-eef7-484d-bdaa-5cf3eee7cfe7.png)
+
+Add another build stage to push docker images to dockerhub.
+
+![image](https://user-images.githubusercontent.com/117186369/213204963-70abd0eb-a1bf-4cb8-964b-225b0b08d98e.png)
+
+Add another build stage to copy files from ansible server to the kubernetes server.
+
+![image](https://user-images.githubusercontent.com/117186369/213205052-750a0f48-1916-4197-9a98-0ab631418c58.png)
+
+Last build stage to deploy deployment.yaml and service.yaml files to kubernetes.
+
+![image](https://user-images.githubusercontent.com/117186369/213205200-eeccc0cf-fbe2-401b-af7c-16d10d20c84b.png)
+
+The webapp was then successfully deployed to the kops cluster.
+
+![image](https://user-images.githubusercontent.com/117186369/213205398-4a52ad29-d558-43eb-9c9a-86cd318ff532.png)
+
+Kops cluster successfully running 2 pods.
+
+![image](https://user-images.githubusercontent.com/117186369/213205474-7a29cf2c-c602-4d97-9a68-c60bb6940f92.png)
+
+The webapp successfully running in browser after running the complete Jenkins pipeline.
+
+
