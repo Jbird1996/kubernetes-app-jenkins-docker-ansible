@@ -72,5 +72,5 @@ The WORKDIR in this case is  /var/www/html. This tells Docker that all the subse
 
 The CMD command shows that when a container is started based on the image. That's what we want to execute.
 
-
+The EXPOSE command is an instruction to let Docker know that when this container is started, we want to expose a certain port to our local system.
 
