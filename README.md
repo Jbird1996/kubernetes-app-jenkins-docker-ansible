@@ -11,23 +11,23 @@ In this project I take a simple web app found on the internet and containerize i
 
 The purpose of containerization is to provide a secure, reliable, and lightweight runtime environment for applications that is consistent from host to host. 
 
-Containers provide;
+- Containers provide;
 
-Portability
+- Portability
 
-Efficiency
+- Efficiency
 
-Agility
+- Agility
 
-Faster delivery
+- Faster delivery
 
-Improved security
+- Improved security
 
-Faster app startup
+- Faster app startup
 
-Easier management
+- Easier management
 
-Flexibility
+- Flexibility
 
 ## Why use Kubernetes to deploy containers? 
 
